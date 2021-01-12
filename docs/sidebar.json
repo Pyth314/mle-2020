@@ -1,9 +1,9 @@
 {
   "moviesrec": {
     "Overview": "/",
+    "The Initial Notebook": "project_internship_mle.html",
     "The data": "features_store.html",
     "Similarity": "similarities.html",
-    "Getting recommendation": "recommendation.html",
-    "Intro": "project_internship_mle.html"
+    "Getting recommendation": "recommendation.html"
   }
 }

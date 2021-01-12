@@ -10,6 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: The Initial Notebook
+      url: project_internship_mle.html
+    - output: web,pdf
       title: The data
       url: features_store.html
     - output: web,pdf
@@ -18,9 +21,6 @@ entries:
     - output: web,pdf
       title: Getting recommendation
       url: recommendation.html
-    - output: web,pdf
-      title: Intro
-      url: project_internship_mle.html
     output: web
     title: moviesrec
   output: web
