@@ -8,10 +8,10 @@ The initial project is a recommendation tool that is ready to be deployed.
 Taking [this example](https://info.crunchydata.com/blog/recommendation_engine_in_postgres_with_pandas_and_python), we would like to deploy it server-side on our PostgreSQL server by embedding it into a simple python function.
 
 
-To deploy it according to the best practice we'll break it down into a _nbdev_ project. This will allow us to continue developing the core components of our recommendations with collaborative jupyter notebooks : 
-* features_store notebooks : for getting cleaned data & features for our recommendations
-* similarities notebooks : where we develop the notions of similarity for our recommendations 
-* recommendation: the way we deploy/access our recommendations
+To deploy it according to the best practice we'll break it down into a [_nbdev_](https://nbdev.fast.ai) project. This will allow us to continue developing the core components of our recommendations with collaborative jupyter notebooks : 
+* [features_store notebooks](https://github.com/Pyth314/mle-2020/blob/main/mle-2020/00_features_store.ipynb) : for getting cleaned data & features for our recommendations
+* [similarities](https://github.com/Pyth314/mle-2020/blob/main/mle-2020/01_similarities.ipynb) notebooks : where we develop the notions of similarity for our recommendations 
+* [recommendation](https://github.com/Pyth314/mle-2020/blob/main/mle-2020/02_recommendation.ipynb): the way we deploy/access our recommendations
 
 ## Install
 
