@@ -2,12 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"genre_cols": "00_features_store.ipynb",
-         "genre_and_title_cols": "00_features_store.ipynb",
-         "dot_product_similarity": "01_similarities.ipynb",
-         "similarity": "01_similarities.ipynb",
-         "get_most_similar": "02_recommendation.ipynb",
-         "get_recommendations": "02_recommendation.ipynb"}
+index = {"genre_cols": "01_features_store.ipynb",
+         "genre_and_title_cols": "01_features_store.ipynb",
+         "dot_product_similarity": "02_similarities.ipynb",
+         "similarity": "02_similarities.ipynb",
+         "get_most_similar": "03_recommendation.ipynb",
+         "get_recommendations": "03_recommendation.ipynb"}
 
 modules = ["features_store.py",
            "similarities.py",
