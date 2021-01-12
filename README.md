@@ -1,42 +1,95 @@
-# Interview project for TinyClues MLE Internship
-
-## Introduction
-
-This is the interview project that any applicant to our MLE internship position receives.
-
-The current structure is the following:
-![](imgs/project_structure.png)
-
-The [notebook](project_internship_mle.ipynb) holds the necessary information to complete this exercise.
-In order to run it, we provide you with a jupyter-lab that you shall install following the [Setup environment section](#setup-the-environment)
-
-The code you'll find is a naive implementation with number of shortcomings preventing 
-the collaboration of multiple MLE and Data Scientists:
-- It is not possible to introduce easily new functionalities mainly because the code is just a bunch of functions in one onotebook.
-- The code can not be scaled to other datasets or variations of the tasks.
-- There is no evaluation of the performances.
-- There is no unit testing
-
-Your main task is to refactor the code from the notebook to python files. The goal of this refactoring is to solve the shortcomings listed above. Optionally, if you have the time and some ideas of features to introduce, feel free to do so.
-
-The projects will be evaluated on the quality of the source code produced. The closer to "clean code", the better.
-
-## Answer modalities
-
-We expect you to provide us with a invitation link to a fork of this repository. It shall be hosted on `github`.  
-Within it, we shall find your source code and anything you think is necessary.
+# Break down a notebook into _nbdev_ portable project
+> interview task: break down a notebook into a portable, collaborative & easily deployable project. 
 
 
-## Setup the environment
-Run the following commands in your development environment
-```bash
-$ pip install pipenv
-$ pipenv install
+The initial project is a recommendation tool that is ready to be deployed.
+
+
+Taking [this example](https://info.crunchydata.com/blog/recommendation_engine_in_postgres_with_pandas_and_python), we would like to deploy it server-side on our PostgreSQL server by embedding it into a simple python function.
+
+
+To deploy it according to the best practice we'll break it down into a _nbdev_ project. This will allow us to continue developing the core components of our recommendations with collaborative jupyter notebooks : 
+* features_store notebooks : for getting cleaned data & features for our recommendations
+* similarities notebooks : where we develop the notions of similarity for our recommendations 
+* recommendation: the way we deploy/access our recommendations
+
+## Install
+
+`pip install -e .`
+
+## How to use
+
+Getting the recommendation for `user_id 999` with the `dot_product_similarity`
+
+```python
+from moviesrec.features_store import movies , ratings , users , genre_and_title_cols , genre_cols
+from moviesrec.similarities import dot_product_similarity
+from moviesrec.recommendation import get_recommendations
 ```
 
-### Test that everything is working
-Check that you can run the notebook:
-```bash
-$ pipenv run jupyter-lab
+```python
+get_recommendations(user_id=999 , similarity = dot_product_similarity(movies[genre_cols]))
 ```
-:warning: Execute every cells of the notebook just to be sure that everything is running smoothly.
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_id</th>
+      <th>title</th>
+      <th>similarity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>166</td>
+      <td>First Knight</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1451</td>
+      <td>Smilla's Sense of Snow</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>503</td>
+      <td>Perfect World, A</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3197</td>
+      <td>Man Bites Dog (C'est arriv� pr�s de chez vous)</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1458</td>
+      <td>Devil's Own, The</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

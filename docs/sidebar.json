@@ -1,0 +1,9 @@
+{
+  "moviesrec": {
+    "Overview": "/",
+    "The data": "features_store.html",
+    "Similarity": "similarities.html",
+    "Getting recommendation": "recommendation.html",
+    "Intro": "project_internship_mle.html"
+  }
+}
