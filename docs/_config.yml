@@ -2,7 +2,7 @@ repository: pyth314/movies
 output: web
 topnav_title: movies
 site_title: movies
-company_name: @pyth314
+company_name: pyth314
 description: A movie recommendation tool
 # Set to false to disable KaTeX math
 use_math: true
